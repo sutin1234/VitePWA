@@ -3,7 +3,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
-  // base: '/',
+  base: '/',
   plugins: [vue(),
   VitePWA({
     registerType: 'autoUpdate',
@@ -16,10 +16,10 @@ export default defineConfig({
     strategies: 'injectManifest',
     srcDir: 'src',
     filename: 'sw.js',
-    devOptions: {
-      enabled: true,
-      // type: 'module',
-    }
+    // devOptions: {
+    //   enabled: true,
+    //   type: 'module',
+    // }
 
   }),
 ],
