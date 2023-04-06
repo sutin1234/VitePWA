@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [vue(),
   VitePWA({
     registerType: 'autoUpdate',
-    injectRegister: 'auto',
+    injectRegister: null,
     workbox: {
       clientsClaim: true,
       skipWaiting: true
