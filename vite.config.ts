@@ -3,7 +3,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
-  base: 'https://vite-pbo2zv8z1-sutin1234.vercel.app',
+  base: '/',
   plugins: [vue(),
   VitePWA({
     registerType: 'autoUpdate',
