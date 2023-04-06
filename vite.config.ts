@@ -13,7 +13,7 @@ export default defineConfig({
       skipWaiting: true
     },
     mode: 'production',
-    // strategies: 'injectManifest',
+    strategies: 'injectManifest',
     srcDir: 'src',
     filename: 'sw.js',
     devOptions: {
