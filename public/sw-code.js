@@ -1,14 +1,11 @@
-import { cleanupOutdatedCaches, precacheAndRoute } from 'workbox-precaching'
-cleanupOutdatedCaches()
-precacheAndRoute(self.__WB_MANIFEST)
-
 
 self.addEventListener("fetch", (event) => {
+  console.log("on fetch", event);
   event.respondWith(
     (async () => {
       const store = await caches.open("name-forcer");
       const req = event.request;
-      console.log("on fetch ", req);
+      console.log("name-forcer", req);
       const cached = await store.match(req);
       return cached || fetch(req);
     })()

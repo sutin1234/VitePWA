@@ -3,28 +3,17 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
-  base: '/',
   plugins: [vue(),
   VitePWA({
     registerType: 'autoUpdate',
-    injectRegister: 'script',
-    workbox: {
-      clientsClaim: true,
-      skipWaiting: true
+    injectRegister: 'auto',
+    devOptions: {
+      enabled: true,
+      type: 'module',
     },
-    mode: 'production',
-    strategies: 'injectManifest',
-    srcDir: 'src',
-    filename: 'sw.js',
-    // devOptions: {
-    //   enabled: true,
-    //   type: 'module',
-    // }
-
-  }),
+    workbox: {
+      importScripts: ["/sw-code.js"]
+    }
+  })
 ],
-  build: {
-    chunkSizeWarningLimit: 2000,
-    sourcemap: false,
-  }
 })
