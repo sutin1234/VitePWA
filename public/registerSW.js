@@ -3,7 +3,7 @@ if ("serviceWorker" in navigator) {
     console.log("serviceWorker loaded");
     navigator.serviceWorker.register("/sw.js", {
       scope: "/",
-      type: import.meta.env.MODE === "production" ? "classic" : "module",
+      // type: import.meta.env.MODE === "production" ? "classic" : "module",
     });
   });
 }
